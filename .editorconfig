@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS1633: Нераспознанная директива #pragma
+dotnet_diagnostic.CS1633.severity = silent
+
+[*]
+charset = utf-8

@@ -1,4 +1,4 @@
-﻿public class Hero : Character
+public class Hero : Character
 {
 
 }
