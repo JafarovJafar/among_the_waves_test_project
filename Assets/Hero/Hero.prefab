@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 4734429772107468377}
   _collider: {fileID: 1242661654767326079}
+  _animator: {fileID: 3957847381356583783}
+  _deathParticle: {fileID: 0}
+  _moveSettings: {fileID: 11400000, guid: fd6252cda9b43704fbe14a9436a45b2e, type: 2}
 --- !u!54 &4734429772107468377
 Rigidbody:
   m_ObjectHideFlags: 0

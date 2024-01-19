@@ -8,10 +8,14 @@ using UnityEngine;
 /// </remarks>
 public class HeroContext
 {
+    public CharacterInput Input;
+
     public Rigidbody Rigidbody;
-    public Animator Animator;
+    public HeroAnimatorHelper Animator;
     public Collider MovementCollider;
 
     public float DeathDuration;
     public ParticleSystem DeathParticle;
+
+    public MoveSettings MoveSettings;
 }

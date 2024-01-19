@@ -37,7 +37,7 @@ public abstract class InputField<T>
     /// </summary>
     protected abstract bool _isDefaultValue { get; }
 
-    public void UpdateValue(T value)
+    public void SetValue(T value)
     {
         CurrentValue = value;
 

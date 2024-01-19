@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class KeyboardInputController : BaseInputController
 {
     public override void Update()
@@ -8,11 +10,15 @@ public class KeyboardInputController : BaseInputController
 
     private void SetJumpValue()
     {
-        _controllable.Input.
+        _controllable.Input.JumpInput.SetValue(Input.GetKeyDown(KeyCode.Space));
     }
 
     private void SetMoveValue()
     {
+        Vector2 moveVector = new Vector2();
+        moveVector.x = Input.GetAxis("Horizontal");
+        moveVector.y = Input.GetAxis("Vertical");
 
+        _controllable.Input.MoveInput.SetValue(moveVector);
     }
 }

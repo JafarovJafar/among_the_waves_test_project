@@ -1,7 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private Collider _collider;
+    [SerializeField] protected Rigidbody _rigidbody;
+    [SerializeField] protected Collider _collider;
+    [SerializeField] protected Animator _animator;
+
+    protected StateMachine _stateMachine;
+
+    private void Update() => _stateMachine.Tick();
 }
