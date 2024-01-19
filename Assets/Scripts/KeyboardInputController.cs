@@ -16,8 +16,8 @@ public class KeyboardInputController : BaseInputController
     private void SetMoveValue()
     {
         Vector2 moveVector = new Vector2();
-        moveVector.x = Input.GetAxis("Horizontal");
-        moveVector.y = Input.GetAxis("Vertical");
+        moveVector.x = Input.GetAxisRaw("Horizontal");
+        moveVector.y = Input.GetAxisRaw("Vertical");
 
         _controllable.Input.MoveInput.SetValue(moveVector);
     }

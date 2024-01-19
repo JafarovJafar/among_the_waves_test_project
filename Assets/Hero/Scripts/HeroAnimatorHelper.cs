@@ -18,8 +18,8 @@ public class HeroAnimatorHelper
 
     private Animator _animator;
 
-    private string _moveVelocityParameterName;
-    private string _vertVelocityParameterName;
+    private string _moveVelocityParameterName = "move_speed";
+    private string _vertVelocityParameterName = "y_direction";
 
     public void PlayDeath() { }
 

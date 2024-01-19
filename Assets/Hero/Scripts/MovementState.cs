@@ -28,6 +28,14 @@ public class MovementState : IState
         moveVector.y = 0f;
 
         _context.Rigidbody.velocity = _context.MoveSettings.MoveSpeed * moveVector;
+
+        if (!Mathf.Approximately(moveVector.x, 0f))
+        {
+            var model = _context.ModelTransform;
+            model.LookAt(model.position + (Vector3)moveVector, Vector3.up);
+        }
+
+        _context.Animator.SetMovementVelocity(Mathf.Abs(moveVector.x));
     }
 
     public void Exit()

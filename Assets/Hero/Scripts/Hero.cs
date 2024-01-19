@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Hero : Character, IControllableCharacter
 {
+    [SerializeField] private float _deathDuration;
     [SerializeField] private ParticleSystem _deathParticle;
 
     [SerializeField] private MoveSettings _moveSettings;
@@ -21,17 +22,21 @@ public class Hero : Character, IControllableCharacter
 
         _animatorHelper = new HeroAnimatorHelper(_animator);
 
-        _context = new HeroContext();
-        _context.Input = _input;
-        _context.Rigidbody = _rigidbody;
-        _context.MovementCollider = _collider;
-        _context.Animator = _animatorHelper;
-        _context.DeathParticle = _deathParticle;
-        _context.MoveSettings = _moveSettings;
+        _context = new HeroContext
+            (
+            _input,
+            _modelTransform,
+            _rigidbody,
+            _animatorHelper,
+            _collider,
+            _deathDuration,
+            _deathParticle,
+            _moveSettings
+            );
 
         _movementState = new MovementState(_context);
         _deathState = new DeathState(_context);
-        
+
         _stateMachine = new StateMachine();
         _stateMachine.ChangeState(_movementState);
     }
