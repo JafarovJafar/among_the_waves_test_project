@@ -7,10 +7,10 @@ public class Hero : Character, IControllableCharacter
 
     [SerializeField] private MoveSettings _moveSettings;
 
+    [SerializeField] private HeroAnimatorHelper _animatorHelper;
+
     public CharacterInput Input => _input;
     private CharacterInput _input;
-
-    private HeroAnimatorHelper _animatorHelper;
 
     private HeroContext _context;
     private MovementState _movementState;
@@ -20,7 +20,7 @@ public class Hero : Character, IControllableCharacter
     {
         _input = new CharacterInput();
 
-        _animatorHelper = new HeroAnimatorHelper(_animator);
+        _animatorHelper.Init(_animator);
 
         _context = new HeroContext
             (

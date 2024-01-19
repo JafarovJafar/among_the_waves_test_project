@@ -54,6 +54,7 @@ MonoBehaviour:
   _deathDuration: 0
   _deathParticle: {fileID: 0}
   _moveSettings: {fileID: 11400000, guid: fd6252cda9b43704fbe14a9436a45b2e, type: 2}
+  _animatorHelper: {fileID: 5755147224061313989}
 --- !u!54 &4734429772107468377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,6 +176,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c03d58ebe14ba547b63e72516e14d11, type: 3}
       insertIndex: -1
       addedObject: {fileID: 858011371748148767}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c03d58ebe14ba547b63e72516e14d11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5755147224061313989}
   m_SourcePrefab: {fileID: 100100000, guid: 3c03d58ebe14ba547b63e72516e14d11, type: 3}
 --- !u!95 &3957847381356583783 stripped
 Animator:
@@ -210,3 +214,17 @@ MonoBehaviour:
   _boolValue: 0
   _floatValue: 0
   _intValue: 0
+--- !u!114 &5755147224061313989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730117879226801063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de87a3bd98b7b64ca95e0fec16e49c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveVelocityChangeDelta: 5
+  _vertVelocityChangeDelta: 5
