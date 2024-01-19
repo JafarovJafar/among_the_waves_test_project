@@ -11,7 +11,7 @@ public class HeroContext
     public HeroContext
         (
         CharacterInput input,
-        Transform modelTransform,
+        CharacterModelHolder modelHolder,
         Rigidbody rigidbody,
         HeroAnimatorHelper animator,
         Collider movementCollider,
@@ -21,7 +21,7 @@ public class HeroContext
         )
     {
         Input = input;
-        ModelTransform = modelTransform;
+        ModelHolder = modelHolder;
         Rigidbody = rigidbody;
         Animator = animator;
         MovementCollider = movementCollider;
@@ -32,7 +32,7 @@ public class HeroContext
 
     public CharacterInput Input;
 
-    public Transform ModelTransform;
+    public CharacterModelHolder ModelHolder;
     public Rigidbody Rigidbody;
     public HeroAnimatorHelper Animator;
     public Collider MovementCollider;

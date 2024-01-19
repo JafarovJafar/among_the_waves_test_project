@@ -31,8 +31,14 @@ public class MovementState : IState
 
         if (!Mathf.Approximately(moveVector.x, 0f))
         {
-            var model = _context.ModelTransform;
-            model.LookAt(model.position + (Vector3)moveVector, Vector3.up);
+            if (moveVector.x > 0f)
+            {
+                _context.ModelHolder.SetRotation(RotationType.Right);
+            }
+            else
+            {
+                _context.ModelHolder.SetRotation(RotationType.Left);
+            }
         }
 
         _context.Animator.SetMovementVelocity(Mathf.Abs(moveVector.x));

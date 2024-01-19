@@ -20,12 +20,14 @@ public class Hero : Character, IControllableCharacter
     {
         _input = new CharacterInput();
 
+        _modelHolder.Init();
+
         _animatorHelper.Init(_animator);
 
         _context = new HeroContext
             (
             _input,
-            _modelTransform,
+            _modelHolder,
             _rigidbody,
             _animatorHelper,
             _collider,
