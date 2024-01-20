@@ -32,9 +32,11 @@ public class DeathState : IState
         _context.MovementCollider.enabled = false;
 
         // включаем партикл смерти (геймобджект)
-        _context.DeathParticle.gameObject.SetActive(true);
+        //_context.DeathParticle.gameObject.SetActive(true);
         // воспроизводим партикл смерти
-        _context.DeathParticle.Play();
+        //_context.DeathParticle.Play();
+
+        _context.Animator.PlayDeath();
     }
 
     public void Tick()
@@ -49,7 +51,7 @@ public class DeathState : IState
     public void Exit()
     {
         // останавливаем партикл смерти
-        _context.DeathParticle.Stop();
-        _context.DeathParticle.gameObject.SetActive(false);
+        //_context.DeathParticle.Stop();
+        //_context.DeathParticle.gameObject.SetActive(false);
     }
 }

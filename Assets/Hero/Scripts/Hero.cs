@@ -1,7 +1,11 @@
 using UnityEngine;
 
-public class Hero : Character, IControllableCharacter
+public class Hero : Character, IControllableCharacter, IDamageable
 {
+    // todo если в игре предполагаются баффы и прочие подификаторы здоровья, то лучше сделать отдельный класс для упправления здоровьем.
+    // но в тестовом задании это не предполагается, поэтому этого тут нет
+    [SerializeField] private float _health;
+
     [SerializeField] private float _deathDuration;
     [SerializeField] private ParticleSystem _deathParticle;
 
@@ -41,5 +45,15 @@ public class Hero : Character, IControllableCharacter
 
         _stateMachine = new StateMachine();
         _stateMachine.ChangeState(_movementState);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _health -= damage;
+
+        if (_health < 0f)
+        {
+            _stateMachine.ChangeState(_deathState);
+        }
     }
 }

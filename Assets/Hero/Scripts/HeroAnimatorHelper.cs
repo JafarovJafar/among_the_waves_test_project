@@ -25,14 +25,26 @@ public class HeroAnimatorHelper : MonoBehaviour
     private float _currentVertVelocity;
     private float _goalVertVelocity;
 
+    private string _deathParameterName = "death";
+
+    private string _onGroundParameterName = "on_ground";
+    private string _onAirParameterName = "on_air";
+
     public void Init(Animator animator)
     {
         _animator = animator;
     }
 
-    public void PlayDeath() { }
+    public void PlayDeath()
+    {
+        _animator.SetTrigger(_deathParameterName);
+    }
 
-    public void PlayMovement() { }
+    public void PlayMovement()
+    {
+        _animator.SetBool(_onGroundParameterName, true);
+        _animator.SetBool(_onAirParameterName, false);
+    }
 
     public void SetMovementVelocity(float velocity)
     {
@@ -42,7 +54,8 @@ public class HeroAnimatorHelper : MonoBehaviour
 
     public void PlayInAir()
     {
-
+        _animator.SetBool(_onGroundParameterName, false);
+        _animator.SetBool(_onAirParameterName, true);
     }
 
     public void SetVerticalVelocity(float velocity)
