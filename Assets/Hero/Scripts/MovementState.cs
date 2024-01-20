@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 /// <summary>
@@ -5,6 +6,9 @@ using UnityEngine;
 /// </summary>
 public class MovementState : IState
 {
+    public event Action JumpRequested;
+    public event Action OnAirRequested;
+
     private HeroContext _context;
 
     private Vector2InputField _movementInputField;
@@ -17,7 +21,8 @@ public class MovementState : IState
 
     public void Enter()
     {
-
+        _context.Input.JumpInput.Started += Jump_Started;
+        _context.Animator.PlayMovement();
     }
 
     public void Tick()
@@ -42,10 +47,20 @@ public class MovementState : IState
         }
 
         _context.Animator.SetMovementVelocity(Mathf.Abs(moveVector.x));
+
+        if (!_context.GroundChecker.CheckIsGrounded(out var hitInfo))
+        {
+            OnAirRequested?.Invoke();
+        }
     }
 
     public void Exit()
     {
+        _context.Input.JumpInput.Started -= Jump_Started;
+    }
 
+    private void Jump_Started()
+    {
+        JumpRequested?.Invoke();
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 2
   <OnAirAcceleration>k__BackingField: 0.5
+  <JumpStrength>k__BackingField: 5

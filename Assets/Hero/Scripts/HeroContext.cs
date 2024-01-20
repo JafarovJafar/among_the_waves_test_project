@@ -17,7 +17,8 @@ public class HeroContext
         Collider movementCollider,
         float deathDuration,
         ParticleSystem deathParticle,
-        MoveSettings moveSettings
+        MoveSettings moveSettings,
+        GroundChecker groundChecker
         )
     {
         Input = input;
@@ -28,6 +29,7 @@ public class HeroContext
         DeathDuration = deathDuration;
         DeathParticle = deathParticle;
         MoveSettings = moveSettings;
+        GroundChecker = groundChecker;
     }
 
     public CharacterInput Input;
@@ -41,4 +43,6 @@ public class HeroContext
     public ParticleSystem DeathParticle;
 
     public MoveSettings MoveSettings;
+
+    public GroundChecker GroundChecker;
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3417771991017896443}
   - component: {fileID: 668429735848051053}
   - component: {fileID: 9176060898925395381}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 4158137552347016511}
   - component: {fileID: 187730529554088283}
   - component: {fileID: 484207178375421238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
