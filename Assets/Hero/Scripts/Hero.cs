@@ -34,6 +34,7 @@ public class Hero : Character, IControllableCharacter, IDamageable
         _input = new CharacterInput();
 
         _modelHolder.Init();
+        _modelHolder.SetRotation(RotationType.Right);
 
         _animatorHelper.Init(_animator);
 
