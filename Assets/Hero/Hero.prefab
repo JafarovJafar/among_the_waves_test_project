@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8011017439249739}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: da8c0858ec9432e4fbe1929ec244a725, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _posOffset: {x: 0, y: 0.9, z: 0}
-  _sphereRadius: 0.3
+  _sphereRadius: 0.25
   _checkDistance: 0.9
   _skinWidth: 0.025
   _gizmosStartColor: {r: 0, g: 0, b: 1, a: 1}
