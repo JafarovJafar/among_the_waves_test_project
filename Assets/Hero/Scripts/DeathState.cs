@@ -16,6 +16,8 @@ public class DeathState : IState
 
     private float _remainingTime;
 
+    private bool _isGrounded;
+
     public DeathState(HeroContext context)
     {
         _context = context;
@@ -26,8 +28,6 @@ public class DeathState : IState
         // присваиваем длительность смерти
         _remainingTime = _context.DeathDuration;
 
-        // выключаем физику
-        _context.Rigidbody.isKinematic = true;
         // выключаем коллайдер
         _context.MovementCollider.enabled = false;
 
@@ -41,6 +41,24 @@ public class DeathState : IState
 
     public void Tick()
     {
+        // проверяем касание с землей
+        if (!_isGrounded && _context.GroundChecker.CheckIsGrounded(out var hitInfo))
+        {
+            _isGrounded = true;
+        }
+
+        // если мы не на земле, то
+        if (!_isGrounded)
+        {
+            // двигаем игрока вниз (гравитация)
+            _context.Rigidbody.velocity = Physics.gravity;
+        }
+        else
+        {
+            // если мы на земле, то выключаем физику
+            _context.Rigidbody.isKinematic = true;
+        }
+
         // отсчитываем время, чтобы сообщить, что состояние смерти закончилось
         _remainingTime -= Time.deltaTime;
 
